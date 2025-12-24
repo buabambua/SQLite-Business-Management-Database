@@ -28,11 +28,16 @@ LIMIT 10;
 SELECT COUNT(*) FROM customers;
 
 - JOIN
-SELECT o.order_id, c.company_name, o.total_amount
-FROM orders o
-JOIN customers c ON o.customer_id = c.customer_id;
+
+SELECT
+    orders.order_id,
+    customers.company_name,
+    orders.total_amount
+FROM orders
+JOIN customers ON orders.customer_id = customers.customer_id;
 
 - Business Report
+
 SELECT 
   company_name,
   customer_amounts
