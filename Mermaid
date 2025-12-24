@@ -1,0 +1,95 @@
+erDiagram
+    DEPARTMENT ||--o{ EMPLOYEES : "0..1 to many"
+    CUSTOMERS ||--o{ ORDERS : "0..1 to many"
+    PRODUCTS ||--o{ ORDERS : "0..1 to many"
+    PROJECTS ||--o{ FINANCIAL_TRANS : "0..1 to many"
+    EMPLOYEES ||--o{ DOCUMENTS : "0..1 to many"
+    EMPLOYEES ||--o{ PROJECTS : "0..1 to many"
+    SUPPLIERS ||--o{ SUPPLIES : "0..1 to many"
+    EMPLOYEES ||--o{ SUPPLIES : "0..1 to many"
+    PROJECTS ||--o{ SUPPLIES : "0..1 to many"
+    EMPLOYEES ||--o{ ORDERS : "0..1 to many"
+    
+    DEPARTMENT {
+        integer dept_id PK
+        text dept_name
+        text location
+    }
+    
+    EMPLOYEES {
+        integer emp_id PK
+        text first_name
+        text last_name
+        text email
+        date hire_date
+        integer dept_id FK
+    }
+    
+    CUSTOMERS {
+        integer customer_id PK
+        text company_name
+        text contact_name
+        text customer_email
+        decimal customer_amounts
+        text contact_phone
+    }
+    
+    PRODUCTS {
+        integer product_id PK
+        text product_name
+        real unit_price
+    }
+    
+    ORDERS {
+        integer order_id PK
+        datetime order_date
+        integer customer_id FK
+        real total_amount
+        integer product_id FK
+        integer emp_id FK
+    }
+    
+    SUPPLIERS {
+        integer supplier_id PK
+        text supplier_name
+        text contact_name
+        text email
+        text phone
+    }
+    
+    SUPPLIES {
+        integer supply_id PK
+        integer supplier_id FK
+        text item_name
+        real cost
+        date supply_date
+        integer emp_id FK
+        integer project_id FK
+    }
+    
+    FINANCIAL_TRANS {
+        integer trans_id PK
+        datetime trans_date
+        text description
+        real amount
+        text type
+        integer project_id FK
+    }
+    
+    DOCUMENTS {
+        integer doc_id PK
+        text doc_name
+        text file_path
+        date upload_date
+        integer emp_id FK
+    }
+    
+    PROJECTS {
+        integer project_id PK
+        text project_name
+        date start_date
+        date end_date
+        real budget
+        text status
+        integer emp_id FK
+    }
