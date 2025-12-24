@@ -1,48 +1,18 @@
 # SQLite-Business-Management-Database
+Business Management Database System
+- Description
 
-This project is a sample database for a business management system, developed using SQLite to demonstrate SQL proficiency and database design skills
+This database system is designed to manage business operations in a comprehensive manner.
+It consists of 10 core tables covering departments, employees, customers, products, orders, projects, supplies, documents, and financial transactions.
 
-## Database Structure
-- Departments
-- Employees
-- Customers (150 records)
-- Products
-- Orders
-- Projects
-- Financial Transactions
-- Documents
-- Supplies
+The system demonstrates relational database design, data integrity, and practical business use cases using SQL.
 
-##  Technologies
-- SQLite
-- SQL
+Table Structure
+1. DEPARTMENT
 
-## Project Structure
+Stores information about company departments.
 
-# Example Queries sql
-SELECT company_name, customer_amounts
-FROM customers
-ORDER BY customer_amounts DESC
-LIMIT 10;
-
-SELECT COUNT(*) FROM customers;
-
-- JOIN
-
-SELECT
-    orders.order_id,
-    customers.company_name,
-    orders.total_amount
-FROM orders
-JOIN customers ON orders.customer_id = customers.customer_id;
-
-- Business Report
-
-SELECT 
-  company_name,
-  customer_amounts
-FROM customers
-WHERE customer_amounts > 100000
-ORDER BY customer_amounts DESC;
-
-
+Field	Type	Description
+dept_id	INTEGER (PK)	Department ID
+dept_name	TEXT	Department name
+location	TEXT	Department location
