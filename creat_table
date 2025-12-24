@@ -1,0 +1,83 @@
+-- department 
+CREATE TABLE department (
+    dept_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dept_name TEXT NOT NULL,
+    location TEXT
+);
+
+-- employees 
+CREATE TABLE employees (
+    emp_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    email TEXT UNIQUE,
+    hire_date DATE,
+    dept_id INTEGER,
+    FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+); 
+
+-- customers
+CREATE TABLE customers (
+    customer_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    company_name TEXT NOT NULL,
+    contact_name TEXT,
+    customer_email TEXT,
+    customer_amounts DECIMAL,
+    contact_phone TEXT
+);  
+
+-- products 
+CREATE TABLE products (
+    product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_name TEXT NOT NULL,
+    unit_price REAL
+);
+
+-- orders 
+CREATE TABLE orders (
+    order_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    customer_id INTEGER,
+    total_amount REAL,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- supplies 
+CREATE TABLE supplies (
+    supply_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    supplier_name TEXT,
+    item_name TEXT,
+    cost REAL,
+    supply_date DATE
+);
+
+-- financial_trans 
+ CREATE TABLE financial_trans (
+    trans_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    trans_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    description TEXT,
+    amount REAL,
+    type TEXT, -- เช่น 'Income' หรือ 'Expense'
+    project_id INTEGER,
+    FOREIGN KEY (project_id) REFERENCES projects(project_id)
+); 
+
+-- documents 
+CREATE TABLE documents (
+    doc_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    doc_name TEXT NOT NULL,
+    file_path TEXT,
+    upload_date DATE,
+    emp_id INTEGER, -- ผู้รับผิดชอบเอกสาร
+    FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
+);
+
+-- projects 
+CREATE TABLE projects (
+    project_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_name TEXT NOT NULL,
+    start_date DATE,
+    end_date DATE,
+    budget REAL,
+    status TEXT -- เช่น 'In Progress', 'Completed'
+); 
