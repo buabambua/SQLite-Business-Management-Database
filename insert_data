@@ -1,0 +1,159 @@
+-- department 
+INSERT INTO department (dept_name, location) VALUES
+('Sales', 'Bangkok'),
+('IT', 'Bangkok'),
+('HR', 'Chiang Mai'),
+('Finance', 'Bangkok'),
+('Operations', 'Chonburi');
+
+-- Employees 
+INSERT INTO employees (first_name, last_name, email, hire_date, dept_id) VALUES
+('Somchai', 'Sukjai', 'somchai@company.com', '2021-01-15', 1),
+('Somsri', 'Deeja', 'somsri@company.com', '2020-06-10', 2),
+('Anan', 'Wong', 'anan@company.com', '2019-03-20', 3),
+('Kanya', 'Thong', 'kanya@company.com', '2022-02-01', 4),
+('Narin', 'Saelee', 'narin@company.com', '2018-11-11', 5);
+ 
+-- Customers
+INSERT INTO customers (company_name, contact_name, customer_email, customer_amounts, contact_phone) VALUES
+('Siam Tech Solution', 'สมชาย ใจดี', 'somchai@siamtech.com', 55000.00, '081-234-5678'),
+('Andaman Trading', 'วิไลลักษณ์ มั่นคง', 'wilai@andaman.co.th', 12000.50, '082-345-6789'),
+('Bangkok Logistics', 'มานะ รุ่งเรือง', 'mana@bkklogistics.com', 8500.00, '083-456-7890'),
+('Northern Star Co.', 'จันจิรา แสงทอง', 'janjira@nstar.net', 0.00, '084-567-8901'),
+('Green Garden Ltd.', 'สมพร ขยันทำงาน', 'somporn@greengarden.com', 25400.00, '085-678-9012'),
+('Dynamic Engineering', 'เกรียงไกร กล้าหาญ', 'kriang@dynamic.com', 150000.00, '086-789-0123'),
+('Oceanic Seafood', 'พัชราภรณ์ สวยงาม', 'patchara@oceanic.com', 3200.00, '087-890-1234'),
+('Pattaya Resort', 'ธนาธร ยอดเยี่ยม', 'thanatorn@pattaya.resort', 4500.75, '088-901-2345'),
+('Smart Software House', 'รินรดา มีสุข', 'rinrada@smartsoft.io', 98000.00, '089-012-3456'),
+('Thai Silk Export', 'ประเสริฐ เลิศล้ำ', 'prasert@thaisilk.com', 0.00, '081-122-3344'),
+('Modern Furniture', 'กนกวรรณ อ่อนน้อม', 'kanokwan@modernfurn.com', 12500.00, '082-233-4455'),
+('Sunrise Bakery', 'อนุชา รักเรียน', 'anucha@sunrise.com', 5400.00, '083-344-5566'),
+('City Center Mall', 'เบญจมาศ ชื่นใจ', 'benjamas@citymall.com', 210000.00, '084-455-6677'),
+('Global Pharma', 'ชัยยศ ยิ่งใหญ่', 'chaiyos@globalpharma.com', 45800.00, '085-566-7788'),
+('Little Home Cafe', 'ดาริกา น่ารัก', 'darika@littlehome.net', 1200.00, '086-677-8899'),
+('Fast Track Express', 'เอกชัย ไปเร็ว', 'ekachai@fasttrack.com', 7500.50, '087-788-9900'),
+('Golden Jewelry', 'ฟ้ารุ่ง สดใส', 'fahrung@golden.com', 350000.00, '088-899-0011'),
+('Happy Pet Clinic', 'กิตติศักดิ์ ใจดี', 'kittisak@happypet.com', 2800.00, '089-900-1122'),
+('Innovation Lab', 'หทัยรัตน์ เก่งกาจ', 'hathairat@innolab.io', 12000.00, '081-334-4556'),
+('Jazz Music School', 'อิทธิพล เสียงดี', 'ittipol@jazzmusic.com', 4500.00, '082-445-5667'),
+('Kids Learning Center', 'จตุพร อบอุ่น', 'jatuporn@kidslearn.com', 6700.00, '083-556-6778'),
+('Luxury Spa & Wellness', 'ขวัญชัย ผ่อนคลาย', 'kwanchai@luxspa.com', 8900.00, '084-667-7889'),
+('Mountain Coffee Roasters', 'ลัดดาวัลย์ หอมกรุ่น', 'laddawan@mtcoffee.com', 3200.25, '085-778-8990'),
+('New Era Fashion', 'เมทินี ทันสมัย', 'metinee@newera.com', 15600.00, '086-889-9001'),
+('Organic Farm Plus', 'นพดล ธรรมชาติ', 'nopadol@organicplus.com', 4200.00, '087-990-0112'),
+('Power Gym 24', 'ปกรณ์ แข็งแรง', 'pakorn@powergym.com', 1100.00, '088-001-1223'),
+('Quality Printing', 'รุ่งนภา ชัดเจน', 'rungnapa@qualityprint.com', 5600.00, '089-112-2334'),
+('Royal Thai Cuisine', 'สุรศักดิ์ อร่อยดี', 'surasak@royalthai.com', 25000.00, '081-556-6778'),
+('Super Clean Services', 'ทิพวรรณ สะอาด', 'tipawan@superclean.co.th', 3400.00, '082-667-7889'),
+('Tech StartUp Co.', 'วรวุฒิ คิดต่าง', 'worawut@techstartup.com', 0.00, '083-778-8990'),
+('Ultra Mobile Store', 'ญาณิศา สื่อสาร', 'yanisa@ultramobile.net', 12900.00, '084-889-9001'),
+('Vista Real Estate', 'อรรถพล มั่นคง', 'attapol@vistareal.com', 500000.00, '085-990-0112'),
+('Wealth Management', 'วิชัย ร่ำรวย', 'wichai@wealth.com', 1000000.00, '086-001-1223'),
+('Xpert Consulting', 'โยธิน ปรึกษา', 'yothin@xpert.com', 45000.00, '087-112-2334'),
+('Yummy Food Delivery', 'สายใจ อิ่มเอิบ', 'saijai@yummyfood.com', 1500.50, '088-223-3445'),
+('Zen Home Decor', 'อารี สันติ', 'aree@zenhome.com', 7800.00, '089-334-4556'),
+('A1 Construction', 'บุญส่ง สร้างดี', 'boonsong@a1const.com', 850000.00, '081-778-8990'),
+('B-Fresh Market', 'ฉวีวรรณ สดใหม่', 'chawee@bfresh.com', 2300.00, '082-889-9001'),
+('C-Level Executive', 'ดนัย ผู้นำ', 'danai@clevel.com', 0.00, '083-990-0112'),
+('D-Light Energy', 'เอมิกา สว่าง', 'amika@dlight.com', 120000.00, '084-001-1223'),
+('E-Commerce King', 'กิตติพงษ์ ออนไลน์', 'kittipong@eking.com', 45600.00, '085-112-2334'),
+('F-Fine Arts Gallery', 'จารุวรรณ ศิลปะ', 'jaruwan@finearts.com', 9500.00, '086-223-3445'),
+('G-Good Health Pharmacy', 'นลินี สุขภาพ', 'nalinee@goodhealth.com', 3200.00, '087-334-4556'),
+('H-High Speed Internet', 'ปิยะ สายแรง', 'piya@highspeed.net', 1500.00, '088-445-5667'),
+('I-Intelligence Security', 'สมบัติ ปลอดภัย', 'sombat@isecurity.com', 28000.00, '089-556-6778'),
+('J-Journey Travel Agency', 'วาสนา เที่ยวสนุก', 'wasana@jjourney.com', 12500.00, '081-990-0112'),
+('K-Kitchen Ware', 'นพพร ทำครัว', 'nopporn@kkitchen.com', 4300.00, '082-001-1223'),
+('L-Lucky Gold Shop', 'พรทิพย์ โชคดี', 'porntip@luckygold.com', 120000.00, '083-112-2334'),
+('M-Move Logistics', 'อลงกรณ์ ขนส่ง', 'alongkorn@move.com', 5600.50, '084-223-3445'),
+('N-Net Solution', 'นิพนธ์ เชื่อมต่อ', 'niphon@netsol.com', 8900.00, '085-334-4556'),
+('Ocean Blue Marine', 'วิรัช ทะเลไทย', 'wirat@oceanblue.com', 45000.00, '086-445-5667'),
+('Premium Auto Parts', 'สมศักดิ์ ขับขี่', 'somsak@premauto.com', 12500.00, '087-556-6778'),
+('Quality Home Build', 'สายัณห์ สร้างบ้าน', 'sayan@qhome.co.th', 890000.00, '088-667-7889'),
+('Rich Media Group', 'มนตรี สื่อสาร', 'montri@richmedia.net', 32000.00, '089-778-8990'),
+('Soft Solution Co.', 'อารีวรรณ โปรแกรม', 'areewan@softsol.io', 15000.00, '081-889-9001'),
+('Total Security Ltd.', 'บุญมา ปลอดภัย', 'boonma@totalsec.com', 7800.00, '082-990-0112'),
+('Urban Living Real Estate', 'ธนพล ที่ดิน', 'thanapol@urbanliving.com', 1200000.00, '083-001-1223'),
+('Value Added Tax Service', 'พรพรรณ บัญชี', 'pornpan@vatserve.com', 5000.00, '084-112-2334'),
+('World Wide Logistics', 'สมชัย ขนส่ง', 'somchai@wwlogistics.com', 45000.50, '085-223-3445'),
+('Xylophone Music Hub', 'ดนัย ดนตรี', 'danai@xylo.com', 2500.00, '086-334-4556'),
+('Yellow Taxi Service', 'ทองดี ขับไว', 'tongdee@yellowtaxi.net', 1200.00, '087-445-5667'),
+('Zero Waste Thailand', 'สะอาด รักษ์โลก', 'saard@zerowaste.org', 0.00, '088-556-6778'),
+('Alpha Design Studio', 'ปฏิภาณ ศิลป์', 'patipan@alphadesign.com', 28000.00, '089-667-7889'),
+('Beta Bio Tech', 'กมลรัตน์ วิจัย', 'kamolrat@betabio.io', 150000.00, '081-778-8990'),
+('Cool Air Service', 'ชูชาติ ลมเย็น', 'choochart@coolair.com', 4500.00, '082-889-9001'),
+('Deep Sea Pearl', 'มณี รัตนา', 'manee@deepsea.com', 250000.00, '083-990-0112'),
+('Easy Move Thailand', 'อำนาจ ย้ายของ', 'amnat@easymove.com', 3500.00, '084-001-1223'),
+('Fine Dine Restaurant', 'เชฟรสดี ยอดเยี่ยม', 'chef@finedine.net', 12500.75, '085-112-2334'),
+('Great Wall Construction', 'กำแพง แข็งแรง', 'kampang@greatwall.com', 450000.00, '086-223-3445'),
+('High End Audio', 'เสียงทอง ก้องกังวาน', 'siangtong@highend.com', 95000.00, '087-334-4556'),
+('Indigo Fabric', 'คราม สวยงาม', 'kram@indigo.com', 12000.00, '088-445-5667'),
+('Joyful Event Planner', 'ร่าเริง จัดงาน', 'rareng@joyful.net', 55000.00, '089-556-6778'),
+('K-Pop Fashion', 'เกาหลี นิยม', 'korea@kpopfashion.com', 8900.00, '081-667-7889'),
+('Life Plus Wellness', 'สุขภาพดี มีสุข', 'health@lifeplus.com', 4500.00, '082-778-8990'),
+('Mega Store Express', 'ใหญ่โต มหาศาล', 'yaito@megastore.com', 128000.00, '083-889-9001'),
+('Nature Retreat Resort', 'ป่าเขา ลำเนาไพร', 'pakhao@nature.com', 0.00, '084-990-0112'),
+('Online Marketing Pro', 'คลิกเก่ง ยอดขายดี', 'click@onlinepro.io', 25000.00, '085-001-1223'),
+('Prime Property', 'ทรัพย์สิน มั่นคง', 'property@prime.com', 750000.00, '086-112-2334'),
+('Quick Print Shop', 'เร็วไว งานดี', 'quick@printshop.com', 1500.00, '087-223-3445'),
+('Red Rose Florist', 'กุหลาบ สวยสด', 'rose@redrose.com', 2200.00, '088-334-4556'),
+('Silver Star Jewelry', 'ดาวเงิน ระยิบ', 'star@silverjewelry.com', 320000.00, '089-445-5667'),
+('Top Notch Consultant', 'ที่ปรึกษา ขั้นเทพ', 'pro@topnotch.com', 65000.00, '081-556-6778'),
+('Unique Gift Shop', 'ของขวัญ พิเศษ', 'gift@unique.com', 4500.00, '082-667-7889'),
+('Vibrant Color Paint', 'สีสัน สดใส', 'color@vibrant.com', 18000.00, '083-778-8990'),
+('Wise Investment', 'ฉลาด ลงทุน', 'wise@invest.com', 500000.00, '084-889-9001'),
+('X-Ray Lab Center', 'รังสี ตรวจสอบ', 'xray@labcenter.com', 12000.00, '085-990-0112'),
+('Young Spirit Startup', 'วัยรุ่น ไฟแรง', 'young@spirit.io', 0.00, '086-001-1223'),
+('Z-Level Architecture', 'สถาปนิก ระดับสูง', 'archi@zlevel.com', 95000.00, '087-112-2334'),
+('Best Buy Electronics', 'ซื้อดี คุ้มค่า', 'bestbuy@electronics.com', 45000.00, '088-223-3445'),
+('Choice Catering', 'เลือกสรร อาหาร', 'choice@catering.net', 8900.50, '089-334-4556'),
+('Dream Destination', 'ฝันไป ถึงที่', 'dream@destination.com', 125000.00, '081-445-5667'),
+('Elite Education', 'การศึกษา ชั้นยอด', 'elite@edu.com', 55000.00, '082-556-6778'),
+('First Class Travel', 'เดินทาง ชั้นหนึ่ง', 'first@travel.com', 250000.00, '083-667-7889'),
+('Golden Age Nursing', 'ดูแล ผู้สูงวัย', 'care@goldenage.com', 15000.00, '084-778-8990'),
+('Heavy Machinery Rental', 'เครื่องจักร หนักหน่วง', 'heavy@rental.com', 85000.00, '085-889-9001'),
+('Ice Cold Storage', 'ห้องเย็น ยะเยือก', 'ice@storage.com', 42000.00, '086-990-0112'),
+('Just In Time Logistics', 'ทันเวลา พอดี', 'jit@logistics.com', 12000.00, '087-001-1223'),
+('Knowledge Center', 'ศูนย์ความรู้ มั่นคง', 'know@center.edu', 5000.00, '088-112-2334'),
+('Little Sprouts School', 'ต้นกล้า เติบโต', 'sprouts@school.com', 7500.00, '089-223-3445'),
+('Magic Clean Laundry', 'ซักสะอาด มหัศจรรย์', 'magic@clean.com', 1800.00, '081-334-4556');
+
+-- products 
+INSERT INTO products (product_name, unit_price) VALUES
+('Laptop', 25000),
+('Mouse', 500),
+('Keyboard', 1200),
+('Monitor', 7000),
+('Printer', 9000);
+
+-- Orders 
+INSERT INTO orders (customer_id, total_amount) VALUES
+(1, 25000),
+(2, 1200),
+(3, 7000),
+(4, 9000),
+(5, 30000);
+
+-- Supplies 
+INSERT INTO supplies (supplier_name, item_name, cost, supply_date) VALUES
+('ThaiSupply Co.', 'Paper A4', 1200, '2023-01-10'),
+('IT World', 'Ink Cartridge', 3500, '2023-02-15'),
+('OfficePro', 'Stationery Set', 2200, '2023-03-01');
+
+-- Projects 
+INSERT INTO projects (project_name, start_date, end_date, budget, status) VALUES
+('ERP System', '2023-01-01', '2023-06-30', 500000, 'Completed'),
+('Website Redesign', '2023-03-01', '2023-09-30', 200000, 'In Progress'),
+('Mobile App', '2023-05-15', NULL, 300000, 'In Progress');
+
+-- Financial Transactions 
+INSERT INTO financial_trans (description, amount, type, project_id) VALUES
+('Client Payment', 120000, 'Income', 1),
+('Server Cost', 15000, 'Expense', 1),
+('Design Fee', 30000, 'Expense', 2),
+('App Development Payment', 80000, 'Income', 3);
+
+-- documets 
+INSERT INTO documents (doc_name, file_path, upload_date, emp_id) VALUES
+('Contract ERP', '/docs/erp_contract.pdf', '2023-01-05', 1),
+('Design Spec', '/docs/design_spec.pdf', '2023-03-10', 2),
+('HR Policy', '/docs/hr_policy.pdf', '2023-02-01', 3);
