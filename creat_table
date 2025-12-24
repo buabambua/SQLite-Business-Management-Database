@@ -1,83 +1,103 @@
--- department 
-CREATE TABLE department (
-    dept_id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- DEPARTMENT
+CREATE TABLE DEPARTMENT (
+    dept_id INTEGER PRIMARY KEY,
     dept_name TEXT NOT NULL,
     location TEXT
 );
 
--- employees 
-CREATE TABLE employees (
-    emp_id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- EMPLOYEES
+CREATE TABLE EMPLOYEES (
+    emp_id INTEGER PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     email TEXT UNIQUE,
     hire_date DATE,
     dept_id INTEGER,
-    FOREIGN KEY (dept_id) REFERENCES department(dept_id)
-); 
+    FOREIGN KEY (dept_id) REFERENCES DEPARTMENT(dept_id)
+);
 
--- customers
-CREATE TABLE customers (
-    customer_id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- CUSTOMERS
+CREATE TABLE CUSTOMERS (
+    customer_id INTEGER PRIMARY KEY,
     company_name TEXT NOT NULL,
     contact_name TEXT,
     customer_email TEXT,
-    customer_amounts DECIMAL,
+    customer_amounts DECIMAL(10,2),
     contact_phone TEXT
-);  
+);
 
--- products 
-CREATE TABLE products (
-    product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- PRODUCTS
+CREATE TABLE PRODUCTS (
+    product_id INTEGER PRIMARY KEY,
     product_name TEXT NOT NULL,
     unit_price REAL
 );
 
--- orders 
-CREATE TABLE orders (
-    order_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    customer_id INTEGER,
-    total_amount REAL,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+-- SUPPLIERS
+CREATE TABLE SUPPLIERS (
+    supplier_id INTEGER PRIMARY KEY,
+    supplier_name TEXT NOT NULL,
+    contact_name TEXT,
+    email TEXT,
+    phone TEXT
 );
 
--- supplies 
-CREATE TABLE supplies (
-    supply_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    supplier_name TEXT,
-    item_name TEXT,
-    cost REAL,
-    supply_date DATE
-);
-
--- financial_trans 
- CREATE TABLE financial_trans (
-    trans_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    trans_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    description TEXT,
-    amount REAL,
-    type TEXT, -- เช่น 'Income' หรือ 'Expense'
-    project_id INTEGER,
-    FOREIGN KEY (project_id) REFERENCES projects(project_id)
-); 
-
--- documents 
-CREATE TABLE documents (
-    doc_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    doc_name TEXT NOT NULL,
-    file_path TEXT,
-    upload_date DATE,
-    emp_id INTEGER, -- ผู้รับผิดชอบเอกสาร
-    FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
-);
-
--- projects 
-CREATE TABLE projects (
-    project_id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- PROJECTS
+CREATE TABLE PROJECTS (
+    project_id INTEGER PRIMARY KEY,
     project_name TEXT NOT NULL,
     start_date DATE,
     end_date DATE,
     budget REAL,
-    status TEXT -- เช่น 'In Progress', 'Completed'
-); 
+    status TEXT,
+    emp_id INTEGER,
+    FOREIGN KEY (emp_id) REFERENCES EMPLOYEES(emp_id)
+);
+
+-- ORDERS
+CREATE TABLE ORDERS (
+    order_id INTEGER PRIMARY KEY,
+    order_date DATETIME,
+    customer_id INTEGER,
+    total_amount REAL,
+    product_id INTEGER,
+    emp_id INTEGER,
+    FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(customer_id),
+    FOREIGN KEY (product_id) REFERENCES PRODUCTS(product_id),
+    FOREIGN KEY (emp_id) REFERENCES EMPLOYEES(emp_id)
+);
+
+-- SUPPLIES
+CREATE TABLE SUPPLIES (
+    supply_id INTEGER PRIMARY KEY,
+    supplier_id INTEGER,
+    item_name TEXT NOT NULL,
+    cost REAL,
+    supply_date DATE,
+    emp_id INTEGER,
+    project_id INTEGER,
+    FOREIGN KEY (supplier_id) REFERENCES SUPPLIERS(supplier_id),
+    FOREIGN KEY (emp_id) REFERENCES EMPLOYEES(emp_id),
+    FOREIGN KEY (project_id) REFERENCES PROJECTS(project_id)
+);
+
+-- FINANCIAL_TRANS
+CREATE TABLE FINANCIAL_TRANS (
+    trans_id INTEGER PRIMARY KEY,
+    trans_date DATETIME,
+    description TEXT,
+    amount REAL,
+    type TEXT,
+    project_id INTEGER,
+    FOREIGN KEY (project_id) REFERENCES PROJECTS(project_id)
+);
+
+-- DOCUMENTS
+CREATE TABLE DOCUMENTS (
+    doc_id INTEGER PRIMARY KEY,
+    doc_name TEXT NOT NULL,
+    file_path TEXT,
+    upload_date DATE,
+    emp_id INTEGER,
+    FOREIGN KEY (emp_id) REFERENCES EMPLOYEES(emp_id)
+);
